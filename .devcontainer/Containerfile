@@ -1,0 +1,15 @@
+ARG VARIANT=3.10
+FROM python:${VARIANT}
+
+# assumes a debian variant
+RUN apt-get update && apt-get -y install \
+  less  \
+  vim   \
+  libc6 \
+  groff \
+  nano  \
+  postgresql-client \
+  silversearcher-ag
+
+RUN pip install pipenv
+
