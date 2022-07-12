@@ -11,5 +11,13 @@ RUN apt-get update && apt-get -y install \
   postgresql-client \
   silversearcher-ag
 
-RUN pip install pipenv
+ENV APP_HOME /workspaces/python-minecraft-playground
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+
 
