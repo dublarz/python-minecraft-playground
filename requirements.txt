@@ -1,1 +1,5 @@
 mcpi==1.2
+ipython
+ipdb
+mypy
+flake8
